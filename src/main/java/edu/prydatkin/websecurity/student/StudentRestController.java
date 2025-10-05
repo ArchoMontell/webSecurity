@@ -44,4 +44,6 @@ public class StudentRestController {
     public Student update(@RequestBody Student student) {
         return service.update(student);
     }
+
 }
+
