@@ -1,4 +1,4 @@
-package edu.prydatkin.websecurity.item;
+package edu.prydatkin.websecurity.student;
 
 /*
     @author lilbl
@@ -18,23 +18,23 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @Builder
 @ToString
-public class Item {
+public class Student {
 
     @Id
     private String id;
     private String name;
-    private String description;
+    private String gender;
 
-    public Item(String name, String description) {
+    public Student(String name, String gender) {
         this.name = name;
-        this.description = description;
+        this.gender = gender;
     }
 
     @Override
     public final boolean equals(Object o) {
-        if (!(o instanceof Item item)) return false;
+        if (!(o instanceof Student student)) return false;
 
-        return getId().equals(item.getId());
+        return getId().equals(student.getId());
     }
 
     @Override

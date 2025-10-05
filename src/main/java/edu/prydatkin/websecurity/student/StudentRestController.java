@@ -1,4 +1,4 @@
-package edu.prydatkin.websecurity.item;
+package edu.prydatkin.websecurity.student;
 
 /*
     @author lilbl
@@ -14,19 +14,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/items")
+@RequestMapping("/api/v1/students")
 @AllArgsConstructor
-public class ItemRestController {
+public class StudentRestController {
 
-    private final ItemService service;
+    private final StudentService service;
 
     @GetMapping
-    public List<Item> getItems() {
+    public List<Student> getItems() {
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Item getOneItem(@PathVariable String id) {
+    public Student getOneItem(@PathVariable String id) {
         return service.getById(id);
     }
 
@@ -36,12 +36,12 @@ public class ItemRestController {
     }
 
     @PostMapping
-    public Item create(@RequestBody Item item) {
-        return service.create(item);
+    public Student create(@RequestBody Student student) {
+        return service.create(student);
     }
 
     @PutMapping
-    public Item update(@RequestBody Item item) {
-        return service.update(item);
+    public Student update(@RequestBody Student student) {
+        return service.update(student);
     }
 }
